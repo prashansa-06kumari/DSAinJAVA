@@ -1,3 +1,5 @@
+package LinkedListt;
+
 public class LL {
 //    LinkedList<Integer> list = new LinkedList<>();
 //    list.add(34);
@@ -11,6 +13,26 @@ public class LL {
 
     public LL(){
         this.size = 0;
+    }
+
+    public void insertFirst(int val){
+        Node node = new Node(val);
+        node.next = head;
+        head = node;
+
+        if(tail == null){
+            tail = head;
+        }
+        size += 1;
+    }
+
+    public  void display(){
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.value + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("END");
     }
 
     private class Node {
@@ -30,3 +52,27 @@ public class LL {
 
 
 }
+
+
+
+
+
+
+class Main {
+    public static void main(String[] args) {
+
+
+        LL list = new LL();
+        list.insertFirst(3);
+        list.insertFirst(2);
+        list.insertFirst(8);
+        list.insertFirst(17);
+        list.insertFirst(27);
+
+        list.display();
+    }
+
+}
+
+
+
